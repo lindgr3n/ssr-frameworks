@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import data from "../../data.json";
-const products = data.products;
 
 async function getProducts() {
   return new Promise((resolve) => {
@@ -19,7 +18,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div className="bg-white">
       <header className="relative bg-white">
